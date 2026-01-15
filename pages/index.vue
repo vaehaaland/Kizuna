@@ -1,11 +1,11 @@
 <template>
   <NuxtLayout>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="mx-auto max-w-3xl px-4 py-8">
       <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Inbox</h1>
+        <h1 class="text-3xl font-bold text-[var(--text-primary)]">Inbox</h1>
         <button
           @click="showTaskForm = true"
-          class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700"
+          class="inline-flex items-center px-4 py-2 border border-transparent shadow-[var(--shadow-sm)] text-sm font-medium rounded-[var(--radius-md)] text-white bg-[var(--primary)] hover:bg-[var(--primary-hover)] hover:shadow-[var(--shadow-md)] transition-all"
         >
           <svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -20,22 +20,22 @@
           v-model="searchQuery"
           type="text"
           placeholder="Search tasks..."
-          class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+          class="w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-4 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         />
       </div>
 
       <!-- Error Message -->
-      <div v-if="taskStore.error" class="mb-4 p-4 bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-md">
-        <p class="text-red-800 dark:text-red-200">{{ taskStore.error }}</p>
+      <div v-if="taskStore.error" class="mb-4 p-4 bg-[var(--danger)]/10 border border-[var(--danger)]/30 rounded-[var(--radius-md)]">
+        <p class="text-[var(--danger)]">{{ taskStore.error }}</p>
       </div>
 
       <!-- Loading State -->
       <div v-if="taskStore.loading" class="text-center py-8">
-        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--primary)]"></div>
       </div>
 
       <!-- Task List -->
-      <div v-else-if="filteredTasks.length > 0" class="space-y-4">
+      <div v-else-if="filteredTasks.length > 0" class="space-y-3">
         <TaskItem
           v-for="task in filteredTasks"
           :key="task.id"

@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit" class="space-y-4">
     <div>
-      <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+      <label for="title" class="block text-sm font-medium text-[var(--text-primary)]">
         Title *
       </label>
       <input
@@ -9,33 +9,33 @@
         v-model="formData.title"
         type="text"
         required
-        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+        class="mt-1 block w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-3 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         placeholder="Task title"
       />
     </div>
 
     <div>
-      <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+      <label for="description" class="block text-sm font-medium text-[var(--text-primary)]">
         Description
       </label>
       <textarea
         id="description"
         v-model="formData.description"
         rows="3"
-        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+        class="mt-1 block w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-3 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         placeholder="Task description"
       />
     </div>
 
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div>
-        <label for="priority" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label for="priority" class="block text-sm font-medium text-[var(--text-primary)]">
           Priority
         </label>
         <select
           id="priority"
           v-model="formData.priority"
-          class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+          class="mt-1 block w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-3 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         >
           <option value="low">Low</option>
           <option value="medium">Medium</option>
@@ -44,40 +44,40 @@
       </div>
 
       <div>
-        <label for="dueDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label for="dueDate" class="block text-sm font-medium text-[var(--text-primary)]">
           Due Date
         </label>
         <input
           id="dueDate"
           v-model="formData.dueDate"
           type="date"
-          class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+          class="mt-1 block w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-3 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         />
       </div>
     </div>
 
     <div>
-      <label for="project" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+      <label for="project" class="block text-sm font-medium text-[var(--text-primary)]">
         Project
       </label>
       <input
         id="project"
         v-model="formData.project"
         type="text"
-        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+        class="mt-1 block w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-3 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         placeholder="Project name"
       />
     </div>
 
     <div>
-      <label for="tags" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+      <label for="tags" class="block text-sm font-medium text-[var(--text-primary)]">
         Tags (comma-separated)
       </label>
       <input
         id="tags"
         v-model="tagsString"
         type="text"
-        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500"
+        class="mt-1 block w-full rounded-[var(--radius-md)] border border-[var(--text-muted)]/30 bg-[var(--bg-card)] text-[var(--text-primary)] px-3 py-2 shadow-[var(--shadow-sm)] focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
         placeholder="tag1, tag2, tag3"
       />
     </div>
@@ -86,13 +86,13 @@
       <button
         type="button"
         @click="$emit('cancel')"
-        class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-600"
+        class="px-4 py-2 text-sm font-medium text-[var(--text-secondary)] bg-[var(--bg-app)] border border-[var(--text-muted)]/30 rounded-[var(--radius-md)] hover:bg-[var(--bg-surface)] transition-all"
       >
         Cancel
       </button>
       <button
         type="submit"
-        class="px-4 py-2 text-sm font-medium text-white bg-primary-600 border border-transparent rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        class="px-4 py-2 text-sm font-medium text-white bg-[var(--primary)] border border-transparent rounded-[var(--radius-md)] hover:bg-[var(--primary-hover)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all"
       >
         {{ editMode ? 'Update' : 'Create' }}
       </button>

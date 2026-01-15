@@ -3,33 +3,65 @@
 @tailwind utilities;
 
 @layer base {
+  /* Kizuna Hanami (Light) - calm, warm, anime slice-of-life */
   :root {
-    --color-primary-50: #eff6ff;
-    --color-primary-100: #dbeafe;
-    --color-primary-200: #bfdbfe;
-    --color-primary-300: #93c5fd;
-    --color-primary-400: #60a5fa;
-    --color-primary-500: #3b82f6;
-    --color-primary-600: #2563eb;
-    --color-primary-700: #1d4ed8;
-    --color-primary-800: #1e40af;
-    --color-primary-900: #1e3a8a;
+    --bg-app: #f6f4ef;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    --primary: #0ea5e9;
+    --primary-hover: #0284c7;
+    --accent: #fb7185;
+
+    --danger: #ef4444;
+    --success: #22c55e;
+    --warning: #eab308;
+
+    --radius-sm: 0.375rem;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 10px 20px rgba(0,0,0,0.10);
+    --shadow-lg: 0 18px 35px rgba(0,0,0,0.12);
+
+    color-scheme: light;
   }
 
+  /* Kizuna Ronin (Dark) - disciplined, high-contrast, get shit done */
   .dark {
-    --color-primary-50: #1e3a8a;
-    --color-primary-100: #1e40af;
-    --color-primary-200: #1d4ed8;
-    --color-primary-300: #2563eb;
-    --color-primary-400: #3b82f6;
-    --color-primary-500: #60a5fa;
-    --color-primary-600: #93c5fd;
-    --color-primary-700: #bfdbfe;
-    --color-primary-800: #dbeafe;
-    --color-primary-900: #eff6ff;
+    --bg-app: #05070f;
+    --bg-surface: #0b1220;
+    --bg-card: #111a2e;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --primary: #fbbf24;
+    --primary-hover: #f59e0b;
+    --accent: #22d3ee;
+
+    --danger: #ef4444;
+    --success: #22c55e;
+    --warning: #facc15;
+
+    --radius-sm: 0.375rem;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.30);
+    --shadow-md: 0 18px 40px rgba(0,0,0,0.45);
+    --shadow-lg: 0 26px 70px rgba(0,0,0,0.60);
+
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    @apply bg-[var(--bg-app)] text-[var(--text-primary)];
   }
 }
