@@ -3,13 +3,13 @@
     <Transition name="modal">
       <div v-if="show" class="fixed inset-0 z-50 overflow-y-auto" @click.self="$emit('close')">
         <div class="flex min-h-screen items-center justify-center p-4">
-          <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" @click="$emit('close')"></div>
-          <div class="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full p-6">
+          <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" @click="$emit('close')"></div>
+          <div class="relative bg-[var(--bg-card)] rounded-[var(--radius-lg)] shadow-[var(--shadow-lg)] max-w-2xl w-full p-6 border border-[var(--text-muted)]/20">
             <div class="flex items-center justify-between mb-4">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{{ title }}</h2>
+              <h2 class="text-xl font-semibold text-[var(--text-primary)]">{{ title }}</h2>
               <button
                 @click="$emit('close')"
-                class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="Close modal"
               >
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

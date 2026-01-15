@@ -1,38 +1,38 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+  <div class="min-h-screen bg-[var(--bg-app)]">
+    <nav class="bg-[var(--bg-surface)] border-b border-[var(--text-muted)]/20 backdrop-blur-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
-              <h1 class="text-2xl font-bold text-primary-600 dark:text-primary-400">Kizuna</h1>
+              <h1 class="text-2xl font-bold text-[var(--primary)]">Kizuna</h1>
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <NuxtLink
                 to="/"
-                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                :class="$route.path === '/' ? 'border-primary-500 text-gray-900 dark:text-white' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'"
+                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                :class="$route.path === '/' ? 'border-[var(--primary)] text-[var(--text-primary)]' : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-muted)]'"
               >
                 Inbox
               </NuxtLink>
               <NuxtLink
                 to="/today"
-                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                :class="$route.path === '/today' ? 'border-primary-500 text-gray-900 dark:text-white' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'"
+                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                :class="$route.path === '/today' ? 'border-[var(--primary)] text-[var(--text-primary)]' : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-muted)]'"
               >
                 Today
               </NuxtLink>
               <NuxtLink
                 to="/projects"
-                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                :class="$route.path === '/projects' ? 'border-primary-500 text-gray-900 dark:text-white' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'"
+                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                :class="$route.path === '/projects' ? 'border-[var(--primary)] text-[var(--text-primary)]' : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-muted)]'"
               >
                 Projects
               </NuxtLink>
               <NuxtLink
                 to="/settings"
-                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                :class="$route.path === '/settings' ? 'border-primary-500 text-gray-900 dark:text-white' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'"
+                class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors"
+                :class="$route.path === '/settings' ? 'border-[var(--primary)] text-[var(--text-primary)]' : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-muted)]'"
               >
                 Settings
               </NuxtLink>
@@ -41,7 +41,7 @@
           <div class="flex items-center">
             <button
               @click="toggleTheme"
-              class="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              class="p-2 rounded-[var(--radius-md)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card)] transition-all"
               aria-label="Toggle theme"
             >
               <svg v-if="!isDark" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
