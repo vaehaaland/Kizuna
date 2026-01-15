@@ -1,15 +1,15 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { storage, KizunaDatabase } from '../utils/storage';
+import { StorageAdapter, KizunaDatabase } from '../utils/storage';
 import type { Task } from '../types/task';
 
 describe('Storage Adapter', () => {
   let testDb: KizunaDatabase;
-  let testStorage: typeof storage;
+  let testStorage: StorageAdapter;
 
   beforeEach(async () => {
     // Create a new database instance for each test
     testDb = new KizunaDatabase();
-    testStorage = storage;
+    testStorage = new StorageAdapter(testDb);
     await testDb.tasks.clear();
   });
 

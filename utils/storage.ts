@@ -48,23 +48,21 @@ export class StorageAdapter {
     project?: string;
     priority?: Task['priority'];
   }): Promise<Task[]> {
-    let collection = this.db.tasks.toCollection();
-
+    let tasks = await this.db.tasks.toArray();
+    
     if (filter.completed !== undefined) {
-      collection = this.db.tasks.where('completed').equals(filter.completed);
+      tasks = tasks.filter(task => task.completed === filter.completed);
     }
-
+    
     if (filter.project) {
-      const tasks = await collection.toArray();
-      return tasks.filter(task => task.project === filter.project);
+      tasks = tasks.filter(task => task.project === filter.project);
     }
-
+    
     if (filter.priority) {
-      const tasks = await collection.toArray();
-      return tasks.filter(task => task.priority === filter.priority);
+      tasks = tasks.filter(task => task.priority === filter.priority);
     }
-
-    return await collection.toArray();
+    
+    return tasks;
   }
 
   async getTodayTasks(): Promise<Task[]> {
