@@ -138,5 +138,5 @@ See the [LICENSE](LICENSE) file for details.
 
 ## Version
 
-v1.0 - Initial release
+2026.01.1 - Initial release
 

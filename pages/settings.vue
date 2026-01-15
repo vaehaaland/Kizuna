@@ -100,7 +100,7 @@
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
           <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">About</h2>
           <p class="text-sm text-gray-600 dark:text-gray-400">
-            Kizuna v1.0 - Fast, efficient and feature rich ToDo application built for ease of use and time tracking
+            Kizuna 2026.01.1 - Fast, efficient and feature rich ToDo application built for ease of use and time tracking
           </p>
         </div>
       </div>
